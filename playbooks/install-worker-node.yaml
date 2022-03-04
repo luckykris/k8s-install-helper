@@ -1,0 +1,14 @@
+- hosts: worker
+  sudo: yes
+  gather_facts: true
+  roles:
+    - pre-install
+    - gather-facts-extend
+    - pre-install
+    - install-kubeadm
+    - install-runtime
+    - install-kubelet
+    - install-cni
+    - post-install
+    - join-cluster
+    - join-cluster-post-hook

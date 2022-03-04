@@ -1,0 +1,4 @@
+---
+- name: pre-install http
+  shell: curl {{item}} |bash
+  with_items: PRE_INSTALL_SCRIPT_FROM_HTTP

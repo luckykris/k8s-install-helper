@@ -1,0 +1,28 @@
+---
+- name: install kubeadm http
+  get_url:
+    dest: {{ WORKSPACE }}/bin/kubeadm
+    url: {{ KUBEADM_INSTAL_DOWNLOAD_HTTP_URL }}
+    mode: 0755
+  when:
+    KUBEADM_INSTALL_FROM == "http"
+
+
+
+- name: install kubeadm scp
+  copy:
+    dest: {{ WORKSPACE }}/bin/kubeadm
+    src: {{ KUBEADM_INSTALL_FILE_PATH }}
+    mode: 0755
+  when:
+    KUBEADM_INSTALL_FROM == "scp"
+
+
+
+- name: install kubeadm local
+  file:
+    path: {{ WORKSPACE }}/bin/kubeadm
+    state: absent
+    mode: 0755
+  when:
+    KUBEADM_INSTALL_FROM == "local"

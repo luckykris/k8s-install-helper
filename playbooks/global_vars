@@ -1,0 +1,12 @@
+WORKSPACE=/tmp/
+
+# http, file , ftp
+KUBEADM_INSTALL_FROM = 'http'
+KUBEADM_INSTAL_DOWNLOAD_HTTP_URL = ''
+KUBEADM_INSTALL_FILE_PATH = ''
+
+
+
+
+PRE_INSTALL_SCRIPT_FROM_HTTP = ["http://1.1.1./1.sh", "http://1.1.1.1/2.sh"]
+
